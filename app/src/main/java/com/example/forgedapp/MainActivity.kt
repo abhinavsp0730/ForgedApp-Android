@@ -17,4 +17,12 @@ class MainActivity : AppCompatActivity() {
         binding.webView.settings.javaScriptEnabled = true
         binding.webView.webViewClient = CustomWebViewClient()
     }
+
+    override fun onBackPressed() {
+        if (binding.webView.canGoBack()) {
+            binding.webView.goBack()
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
