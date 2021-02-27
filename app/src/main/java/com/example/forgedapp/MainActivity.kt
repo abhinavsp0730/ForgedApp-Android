@@ -1,12 +1,13 @@
 package com.example.forgedapp
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.forgedapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: MainActivityViewModel
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding.webView.loadUrl("https://forgedbot.vercel.app/")
         binding.webView.settings.javaScriptEnabled = true
         binding.webView.webViewClient = CustomWebViewClient()
+
     }
 
     override fun onBackPressed() {
